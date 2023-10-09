@@ -108,6 +108,19 @@ function averageEvenElementsWorker(...arr) {
 
 // Мясорубка — агрегатор преобразований.
 // Функция, которая из массива данных и насадки будет возвращать максимальный результат функции насадки.
-function makeWork (arrOfArr, func) {
-    
+function makeWork(arrOfArr, func) {
+	let maxWorkerResult = -Infinity;
+	let result;
+
+	if (arrOfArr.length === 0) {
+		maxWorkerResult = 0;
+	} else {
+		for (i = 0; i < arrOfArr.length; i++) {
+			result = func(...arrOfArr[i]);
+			if (result > maxWorkerResult) {
+				maxWorkerResult = result;
+			}
+		}
+	}
+	return maxWorkerResult;
 }
