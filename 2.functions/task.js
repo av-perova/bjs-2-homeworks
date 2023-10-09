@@ -15,7 +15,8 @@ function getArrayParams(...arr) {
 			max = arr[i]
 		}
 	}
-	const avg = (sum / arr.length).toFixed(2);
+
+	let avg = Number((sum / arr.length).toFixed(2));
 	return {
 		min: min,
 		max: max,
